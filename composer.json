@@ -11,6 +11,7 @@
         "filament/filament": "4.1",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
+        "marcelweidum/filament-passkeys": "^2.0",
         "shuvroroy/filament-spatie-laravel-backup": "^3.1",
         "shuvroroy/filament-spatie-laravel-health": "^3.1"
     },
