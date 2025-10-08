@@ -19,6 +19,7 @@ use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 
+use App\Filament\Pages\Auth\EditProfile;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 
@@ -36,6 +37,7 @@ class AdminPanelProvider extends PanelProvider
             ->brandLogoHeight('2rem')
             ->favicon(asset('images/laravel.png'))
             // ->viteTheme('filament/admin/theme.css')
+            ->profile(EditProfile::class)
             ->colors([
                 'primary' => Color::Indigo,
             ])
