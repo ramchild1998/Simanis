@@ -11,11 +11,12 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Spatie\LaravelPasskeys\Models\Concerns\HasPasskeys;
 use Spatie\LaravelPasskeys\Models\Concerns\InteractsWithPasskeys;
+use Stephenjude\FilamentTwoFactorAuthentication\TwoFactorAuthenticatable;
 
 class User extends Authenticatable implements FilamentUser, HasAvatar, HasPasskeys
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, InteractsWithPasskeys;
+    use HasFactory, Notifiable, InteractsWithPasskeys, TwoFactorAuthenticatable;
 
     /**
      * The attributes that are mass assignable.

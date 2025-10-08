@@ -13,7 +13,8 @@
         "laravel/tinker": "^2.10.1",
         "marcelweidum/filament-passkeys": "^2.0",
         "shuvroroy/filament-spatie-laravel-backup": "^3.1",
-        "shuvroroy/filament-spatie-laravel-health": "^3.1"
+        "shuvroroy/filament-spatie-laravel-health": "^3.1",
+        "stephenjude/filament-two-factor-authentication": "^3.0"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",

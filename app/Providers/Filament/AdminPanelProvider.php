@@ -23,6 +23,7 @@ use App\Filament\Pages\Auth\EditProfile;
 use ShuvroRoy\FilamentSpatieLaravelBackup\FilamentSpatieLaravelBackupPlugin;
 use ShuvroRoy\FilamentSpatieLaravelHealth\FilamentSpatieLaravelHealthPlugin;
 // use MarcelWeidum\Passkeys\PasskeysPlugin;
+use Stephenjude\FilamentTwoFactorAuthentication\TwoFactorAuthenticationPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -68,6 +69,11 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->plugins([
                 // PasskeysPlugin::make(),
+                TwoFactorAuthenticationPlugin::make()
+                    ->enableTwoFactorAuthentication() // Enable Google 2FA
+                    // ->enablePasskeyAuthentication() // Enable Passkey
+                    ->addTwoFactorMenuItem() // Add 2FA menu item
+                    ->forceTwoFactorSetup(), // Force 2FA setup
                 FilamentSpatieLaravelBackupPlugin::make(),
                 FilamentSpatieLaravelHealthPlugin::make()
                     ->authorize(fn (): bool => auth()->user()->email === 'admin@example.co.id'),
